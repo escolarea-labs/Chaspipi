@@ -1,0 +1,34 @@
+/***
+    base.html
+***/
+body{
+    background-color: #fcfcfc;
+    font-family:"Courier";
+}
+
+h1{
+    font-size:50px;
+}
+
+#wrapper{
+    width:65%;
+    margin:auto;
+}
+
+#titles{
+    display:block;
+    color: #444;
+    text-align:center;
+}
+
+#content{
+    border:solid #bcbcbc;
+    min-height:300px;
+    padding-bottom:20px;
+}
+
+#footer{
+    text-align:right;
+    margin-top:30px;
+    color:graytext;
+}

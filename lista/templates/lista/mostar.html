@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form id="form_tarea" method="POST" action="{% url crear_tarea %}">
+        {% csrf_token %}
+        <input type="hidden" id="id_lista" name="lista" value="{{ lista.id }}">
+        <input type="text" id="id_descripcion" name="descripcion" ></textarea>
+    </form>
+
+    {% if lista.tarea_set.exists %}
+        <ul id="lista_tareas">
+        {% for tarea in lista.tarea_set.all %}
+            <li>
+                <input type="checkbox" name="hecha" value="{{ tarea.id }}" class="hecha-check"
+                       {% if tarea.hecha %}checked{% endif %}>
+                <span class="{% if tarea.hecha %}tachado{% endif %}">
+                    {{ tarea.descripcion }}
+                </span>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
